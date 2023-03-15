@@ -1,6 +1,5 @@
 import { Canvas, TldrawEditor, useApp } from "@tldraw/tldraw";
 import "@tldraw/tldraw/editor.css";
-import "@tldraw/tldraw/ui.css";
 import {
   ArrowUturnLeftIcon,
   ArrowUturnRightIcon,
@@ -13,8 +12,10 @@ import {
 } from "@heroicons/react/24/outline";
 import { ShapeMenuButton } from "./ShapeMenuButton";
 import { useCallback } from "react";
+import { twMerge } from "tailwind-merge";
+import { track } from "signia-react";
 
-export default function Editor() {
+const Editor = () => {
   return (
     <div className="fixed w-full h-full">
       <TldrawEditor>
@@ -24,11 +25,11 @@ export default function Editor() {
       </TldrawEditor>
     </div>
   );
-}
+};
 
 type Tool = "draw" | "eraser" | "select" | "line";
 
-const ZoomMenu = () => {
+const ZoomMenu = track(() => {
   const app = useApp();
   const zoomLevel = app.zoomLevel;
 
@@ -40,19 +41,23 @@ const ZoomMenu = () => {
       <ShapeMenuButton className="h-full" onClick={handleZoomOut}>
         <MinusIcon className="w-6 text-slate-900" />
       </ShapeMenuButton>
-      <span className="text-sm text-slate-900 font-medium">{zoomLevel}</span>
+      <span className="text-sm text-slate-900 font-medium">
+        {zoomLevel * 100}%
+      </span>
       <ShapeMenuButton className="h-full" onClick={handleZoomIn}>
         <PlusIcon className="w-6 text-slate-900" />
       </ShapeMenuButton>
     </div>
   );
-};
+});
 
-const ShapeMenu = () => {
+const ShapeMenu = track(() => {
   const app = useApp();
   const isDrawActive = app.currentToolId === "draw";
   const isEraserActive = app.currentToolId === "eraser";
   const isCursorActive = app.currentToolId === "select";
+  const canUndo = app.canUndo;
+  const canRedo = app.canRedo;
 
   const handleSelectTool = useCallback(
     (tool: Tool) => app.setSelectedTool(tool),
@@ -95,13 +100,25 @@ const ShapeMenu = () => {
         </ShapeMenuButton>
       </div>
       <div className="h-max p-1 bg-white shadow-lg flex flex-col">
-        <ShapeMenuButton title="Undo" onClick={handleUndo}>
-          <ArrowUturnLeftIcon className="w-6 text-slate-900" />
+        <ShapeMenuButton title="Undo" onClick={handleUndo} disabled={!canUndo}>
+          <ArrowUturnLeftIcon
+            className={twMerge(
+              "w-6 text-slate-900",
+              !canUndo && "text-slate-300"
+            )}
+          />
         </ShapeMenuButton>
-        <ShapeMenuButton title="Redo" onClick={handleRedo}>
-          <ArrowUturnRightIcon className="w-6 text-slate-900" />
+        <ShapeMenuButton title="Redo" onClick={handleRedo} disabled={!canRedo}>
+          <ArrowUturnRightIcon
+            className={twMerge(
+              "w-6 text-slate-900",
+              !canRedo && "text-slate-300"
+            )}
+          />
         </ShapeMenuButton>
       </div>
     </div>
   );
-};
+});
+
+export default Editor;

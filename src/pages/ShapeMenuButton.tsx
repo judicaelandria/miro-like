@@ -20,7 +20,7 @@ export const ShapeMenuButton = forwardRef<HTMLButtonElement, Props>(
     return (
       <button
         className={twMerge(
-          "w-10 h-10 rounded bg-inherit flex justify-center items-center hover:bg-slate-200 duration-150",
+          "w-10 h-10 rounded bg-inherit flex justify-center items-center hover:bg-slate-100 duration-150 disabled:[&>*]:text-slate-300",
           className,
           isActive && "bg-blue-200 [&>*]:text-blue-600"
         )}
