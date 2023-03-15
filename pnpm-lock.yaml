@@ -15,7 +15,7 @@ specifiers:
   react-dom: 18.2.0
   signia: ^0.0.11
   signia-react: ^0.0.11
-  signia-react-jsx: ^0.0.10
+  signia-react-jsx: ^0.0.11
   tailwind-merge: ^1.10.0
   tailwindcss: ^3.2.7
   typescript: 4.9.5
@@ -33,7 +33,7 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
   signia: 0.0.11
   signia-react: 0.0.11_react@18.2.0
-  signia-react-jsx: 0.0.10_react@18.2.0
+  signia-react-jsx: 0.0.11_react@18.2.0
   tailwind-merge: 1.10.0
   typescript: 4.9.5
 
@@ -3082,22 +3082,13 @@ packages:
       object-inspect: 1.12.3
     dev: false
 
-  /signia-react-jsx/0.0.10_react@18.2.0:
-    resolution: {integrity: sha512-R9Zp/BLhaOBrw9yj+wYjAu7NicSSmxGMKOi04HOfs9U1NVsDsrKpCDlgHeln1TjtWPEa0mcKDP2OxCDKhvKoWw==}
+  /signia-react-jsx/0.0.11_react@18.2.0:
+    resolution: {integrity: sha512-qJRYwHhClHeLxjz0NMsLe8v+sCowSY2miYPyphnXigmF9JWK74U8O8dc/oWLnYcB5tGIVqJ+y+i52lW7qTsI/w==}
     peerDependencies:
       react: ^18
     dependencies:
       react: 18.2.0
-      signia-react: 0.0.10_react@18.2.0
-    dev: false
-
-  /signia-react/0.0.10_react@18.2.0:
-    resolution: {integrity: sha512-MuuhWdBOxtgfq0qu72Bor8Lqn8Y5jyWu8i2t+d+ERjzXWSxvi7Xjvg+BlGbHuRYOvtOyvVuNWOkXQUedvLJ6RA==}
-    peerDependencies:
-      react: ^18
-    dependencies:
-      react: 18.2.0
-      signia: 0.0.10
+      signia-react: 0.0.11_react@18.2.0
     dev: false
 
   /signia-react/0.0.11_react@18.2.0:
@@ -3116,10 +3107,6 @@ packages:
     dependencies:
       react: 18.2.0
       signia: 0.0.8
-    dev: false
-
-  /signia/0.0.10:
-    resolution: {integrity: sha512-2kPu0XzFosmDBF4trVje0zUc4/lonS4BzavbEtdJbWdxpZV2DU13C//X/ddFmoH66LzgV76776nnOdM7D4msQw==}
     dev: false
 
   /signia/0.0.11:
