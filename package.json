@@ -19,8 +19,8 @@
     "next": "13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "signia": "^0.0.10",
-    "signia-react": "^0.0.10",
+    "signia": "^0.0.11",
+    "signia-react": "^0.0.11",
     "signia-react-jsx": "^0.0.10",
     "tailwind-merge": "^1.10.0",
     "typescript": "4.9.5"
