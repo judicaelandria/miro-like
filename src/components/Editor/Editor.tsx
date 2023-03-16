@@ -2,7 +2,7 @@ import { Canvas, TldrawEditor } from "@tldraw/tldraw";
 import "@tldraw/tldraw/editor.css";
 import { PrimaryTool, TopPanel, ZoomMenu } from "~/components";
 
-const Editor = () => {
+export const Editor = () => {
   return (
     <div className="fixed w-full h-full">
       <TldrawEditor>
@@ -14,5 +14,3 @@ const Editor = () => {
     </div>
   );
 };
-
-export default Editor;
