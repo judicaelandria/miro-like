@@ -1,5 +1,10 @@
 lockfileVersion: 5.4
 
+overrides:
+  signia: 0.0.11
+  signia-react: 0.0.11
+  signia-react-jsx: 0.0.11
+
 specifiers:
   '@heroicons/react': ^2.0.16
   '@tldraw/tldraw': 2.0.0-alpha.7
@@ -13,9 +18,9 @@ specifiers:
   postcss: ^8.4.21
   react: 18.2.0
   react-dom: 18.2.0
-  signia: ^0.0.11
-  signia-react: ^0.0.11
-  signia-react-jsx: ^0.0.11
+  signia: 0.0.11
+  signia-react: 0.0.11
+  signia-react-jsx: 0.0.11
   tailwind-merge: ^1.10.0
   tailwindcss: ^3.2.7
   typescript: 4.9.5
@@ -908,8 +913,8 @@ packages:
       nanoid: 3.3.4
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-      signia: 0.0.8
-      signia-react: 0.0.8_react@18.2.0
+      signia: 0.0.11
+      signia-react: 0.0.11_react@18.2.0
     dev: false
 
   /@tldraw/primitives/2.0.0-alpha.7:
@@ -949,7 +954,7 @@ packages:
       '@tldraw/utils': 2.0.0-alpha.7
       lodash.isequal: 4.5.0
       nanoid: 3.3.4
-      signia: 0.0.8
+      signia: 0.0.11
     dev: false
 
   /@tldraw/tlsync-client/2.0.0-alpha.7_react-dom@18.2.0:
@@ -959,8 +964,8 @@ packages:
       '@tldraw/tlstore': 2.0.0-alpha.7
       '@tldraw/tlsync': 2.0.0-alpha.7
       idb: 7.1.1
-      signia: 0.0.8
-      signia-react: 0.0.8_react@18.2.0
+      signia: 0.0.11
+      signia-react: 0.0.11_react@18.2.0
     optionalDependencies:
       react: 18.2.0
     transitivePeerDependencies:
@@ -974,7 +979,7 @@ packages:
       '@tldraw/tlstore': 2.0.0-alpha.7
       '@tldraw/utils': 2.0.0-alpha.7
       lodash.isequal: 4.5.0
-      signia: 0.0.8
+      signia: 0.0.11
     dev: false
 
   /@tldraw/tlvalidate/2.0.0-alpha.7:
@@ -1009,8 +1014,8 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-intl: 6.2.10_j5ip3o3v6sktjzl5cxtjyfbuo4
-      signia: 0.0.8
-      signia-react: 0.0.8_react@18.2.0
+      signia: 0.0.11
+      signia-react: 0.0.11_react@18.2.0
     transitivePeerDependencies:
       - '@types/react'
       - typescript
@@ -3100,21 +3105,8 @@ packages:
       signia: 0.0.11
     dev: false
 
-  /signia-react/0.0.8_react@18.2.0:
-    resolution: {integrity: sha512-SLRyk6Fw1mACdjkZiZfXaYIfts2pYZu8I0arWcrjVhJl7NnpsZa9cUuWM+bl5TtIBHEuS6IXLTQ6lpbJhIuPYQ==}
-    peerDependencies:
-      react: ^18
-    dependencies:
-      react: 18.2.0
-      signia: 0.0.8
-    dev: false
-
   /signia/0.0.11:
     resolution: {integrity: sha512-hAxkvk/aWtDVTlEOGpmE8t60QMmFE2ewiuNvRWiDZ9EcNJ6dTFa7sbtn3adqho4p1O3Lx2ZgQ3WgjHv6W4Etbg==}
-    dev: false
-
-  /signia/0.0.8:
-    resolution: {integrity: sha512-SPWuPXgpqrvebkAnW0ekEcEbrulkgeCOwatT1NrWQbqXv4ZDu/YLiZxlBAVCtoeODXSuwIfqISHYvEfbglvD6w==}
     dev: false
 
   /slash/3.0.0:

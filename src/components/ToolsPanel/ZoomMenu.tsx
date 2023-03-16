@@ -1,0 +1,27 @@
+import { MinusIcon, PlusIcon } from "@heroicons/react/24/outline";
+import { useApp } from "@tldraw/tldraw";
+import { useCallback } from "react";
+import { track } from "signia-react";
+import { ShapeMenuButton } from "~/components/ShapeMenuButton";
+
+export const ZoomMenu = track(() => {
+  const app = useApp();
+  const zoomLevel = app.zoomLevel;
+
+  const handleZoomIn = useCallback(() => app.zoomIn(app.screenCenter), [app]);
+  const handleZoomOut = useCallback(() => app.zoomOut(app.screenCenter), [app]);
+
+  return (
+    <div className="fixed bottom-2 right-2 w-max h-9 bg-white shadow-lg flex items-center gap-4 z-[999] rounded p-1">
+      <ShapeMenuButton className="h-full" onClick={handleZoomOut}>
+        <MinusIcon className="w-6 text-slate-900" />
+      </ShapeMenuButton>
+      <span className="text-sm text-slate-900 font-medium">
+        {zoomLevel * 100}%
+      </span>
+      <ShapeMenuButton className="h-full" onClick={handleZoomIn}>
+        <PlusIcon className="w-6 text-slate-900" />
+      </ShapeMenuButton>
+    </div>
+  );
+});
