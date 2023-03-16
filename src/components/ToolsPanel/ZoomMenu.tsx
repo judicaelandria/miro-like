@@ -17,7 +17,7 @@ export const ZoomMenu = track(() => {
         <MinusIcon className="w-6 text-slate-900" />
       </ShapeMenuButton>
       <span className="text-sm text-slate-900 font-medium">
-        {zoomLevel * 100}%
+        {Math.round(zoomLevel) * 100}%
       </span>
       <ShapeMenuButton className="h-full" onClick={handleZoomIn}>
         <PlusIcon className="w-6 text-slate-900" />
