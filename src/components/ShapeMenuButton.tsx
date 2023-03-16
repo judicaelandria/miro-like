@@ -24,6 +24,7 @@ export const ShapeMenuButton = forwardRef<HTMLButtonElement, Props>(
           className,
           isActive && "bg-blue-200 [&>*]:text-blue-600 hover:bg-blue-200"
         )}
+        aria-label={rest.title}
         data-isactive={isActive}
         ref={ref}
         {...rest}
@@ -33,3 +34,4 @@ export const ShapeMenuButton = forwardRef<HTMLButtonElement, Props>(
     );
   }
 );
+ShapeMenuButton.displayName = "ShapeMenuButton";
