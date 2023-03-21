@@ -19,16 +19,11 @@
     "next": "13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "signia": "^0.0.11",
-    "signia-react": "^0.0.11",
-    "signia-react-jsx": "^0.0.11",
+    "signia": "0.1.0",
+    "signia-react": "0.1.0",
+    "signia-react-jsx": "0.1.0",
     "tailwind-merge": "^1.10.0",
     "typescript": "4.9.5"
-  },
-  "resolutions": {
-    "signia": "0.0.11",
-    "signia-react": "0.0.11",
-    "signia-react-jsx": "0.0.11"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",

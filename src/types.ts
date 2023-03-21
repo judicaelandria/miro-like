@@ -5,4 +5,5 @@ export type Tool =
   | "line"
   | "note"
   | "text"
-  | "frame";
+  | "frame"
+  | "cframe";
