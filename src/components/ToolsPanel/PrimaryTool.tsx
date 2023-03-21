@@ -7,13 +7,31 @@ import {
   StopIcon,
   WindowIcon,
 } from "@heroicons/react/24/outline";
-import { useApp } from "@tldraw/tldraw";
-import { ReactElement, useCallback, useEffect } from "react";
+import { App, useApp } from "@tldraw/tldraw";
+import { ReactElement, useCallback } from "react";
 import { track } from "signia-react";
 import { twMerge } from "tailwind-merge";
 import { LineIcon } from "~/icons";
 import { Tool } from "~/types";
 import { ShapeMenuButton } from "../ShapeMenuButton";
+
+export const getActiveToolId = (app: App) => {
+  const activeTool = app.root.current.value;
+  let activeToolId = activeTool?.id;
+
+  // Often a tool will transition into one of the following select states after the initial pointerdown: 'translating', 'resizing', 'dragging_handle'
+  // It should then supply the tool id to the `onInteractionEnd` property to tell us which tool initially triggered the interaction.
+  // If tool lock mode is on then tldraw will switch to the given tool id.
+  // If tool lock mode is off then tldraw will switch back to the select tool when the interaction ends.
+
+  // There is currently no way to enable tool lock for a specific tool only. We will add that as an option soon!
+  if (activeToolId === "select") {
+    const currentChildState = activeTool?.current.value as any;
+    activeToolId = currentChildState?.info?.onInteractionEnd ?? "select";
+  }
+
+  return activeToolId;
+};
 
 export const PrimaryTool = track(() => {
   const app = useApp();
@@ -44,45 +62,36 @@ export const PrimaryTool = track(() => {
     };
   }, []); */
 
-  const tools: { title: Tool; isActive: boolean; icon: ReactElement }[] = [
+  const tools: { title: Tool; icon: ReactElement }[] = [
     {
       title: "select",
-      isActive: app.currentToolId === "select",
       icon: <CursorArrowRaysIcon className="w-6 text-black" />,
     },
     {
       title: "draw",
-      isActive: app.currentToolId === "draw",
       icon: <PencilIcon className="w-6 text-black" />,
     },
     {
       title: "eraser",
-      isActive: app.currentToolId === "eraser",
       icon: <StopIcon className="w-6 text-black" />,
     },
     {
       title: "line",
-      isActive: app.currentToolId === "line",
       icon: <LineIcon />,
     },
     {
       title: "note",
-      isActive: app.currentToolId === "note",
       icon: <DocumentTextIcon className="w-6 text-black" />,
     },
     {
       title: "text",
-      isActive: app.currentToolId === "text",
       icon: <span className="text-xl text-black">T</span>,
     },
     {
       title: "cframe",
-      isActive: app.currentToolId === "cframe",
       icon: <WindowIcon className="w-6 text-black" />,
     },
   ];
-
-  console.log(app.currentToolId);
 
   return (
     <div className="fixed left-2 top-[30%] h-max space-y-6 z-[999]">
@@ -90,7 +99,7 @@ export const PrimaryTool = track(() => {
         {tools.map((tool, id) => (
           <ShapeMenuButton
             key={id}
-            isActive={tool.isActive}
+            isActive={getActiveToolId(app) === tool.title}
             onClick={() => handleSelectTool(tool.title)}
             title={tool.title}
           >

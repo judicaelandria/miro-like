@@ -8,6 +8,10 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "resolutions": {
+    "signia": "0.1.0",
+    "signia-react": "0.1.0"
+  },
   "dependencies": {
     "@heroicons/react": "^2.0.16",
     "@tldraw/tldraw": "2.0.0-alpha.7",
