@@ -8,7 +8,7 @@ import {
   WindowIcon,
 } from "@heroicons/react/24/outline";
 import { App, useApp } from "@tldraw/tldraw";
-import { ReactElement, useCallback } from "react";
+import { ReactElement, useCallback, useEffect } from "react";
 import { track } from "signia-react";
 import { twMerge } from "tailwind-merge";
 import { LineIcon } from "~/icons";
@@ -39,12 +39,15 @@ export const PrimaryTool = track(() => {
   const handleUndo = useCallback(() => app.undo(), [app]);
   const handleRedo = useCallback(() => app.redo(), [app]);
 
-  /*   useEffect(() => {
+  useEffect(() => {
     const handleKeyUp = (e: KeyboardEvent) => {
       switch (e.key) {
         case "Delete":
         case "Backspace": {
-          app.deleteShapes(app.selectedIds);
+          const isInput = ["input", "textarea"].includes(
+            document.activeElement!.tagName.toLowerCase()
+          );
+          if (!isInput) app.deleteShapes();
         }
       }
     };
@@ -53,7 +56,7 @@ export const PrimaryTool = track(() => {
     return () => {
       window.removeEventListener("keyup", handleKeyUp);
     };
-  }, []); */
+  }, []);
 
   const tools: { title: Tool; icon: ReactElement }[] = [
     {
