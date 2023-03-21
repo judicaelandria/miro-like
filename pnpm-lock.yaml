@@ -1,12 +1,8 @@
 lockfileVersion: 5.4
 
-overrides:
-  signia: 0.1.0
-  signia-react: 0.1.0
-
 specifiers:
   '@heroicons/react': ^2.0.16
-  '@tldraw/tldraw': 2.0.0-alpha.7
+  '@tldraw/tldraw': 2.0.0-alpha.8
   '@types/node': 18.15.3
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
@@ -25,7 +21,7 @@ specifiers:
 
 dependencies:
   '@heroicons/react': 2.0.16_react@18.2.0
-  '@tldraw/tldraw': 2.0.0-alpha.7_fleixqh4h74dmdivs7fx6vtiqe
+  '@tldraw/tldraw': 2.0.0-alpha.8_e67msiuz5ue542jrk4dmqcpxyi
   '@types/node': 18.15.3
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
@@ -880,6 +876,10 @@ packages:
       '@babel/runtime': 7.21.0
     dev: false
 
+  /@react-spring/rafz/9.7.1:
+    resolution: {integrity: sha512-JSsrRfbEJvuE3w/uvU3mCTuWwpQcBXkwoW14lBgzK9XJhuxmscGo59AgJUpFkGOiGAVXFBGB+nEXtSinFsopgw==}
+    dev: false
+
   /@rushstack/eslint-patch/1.2.0:
     resolution: {integrity: sha512-sXo/qW2/pAcmT43VoRKOJbDOfV3cYpq3szSVfIThQXNt+E4DfKj361vaAt3c88U5tPUxzEswam7GW48PJqtKAg==}
     dev: false
@@ -890,15 +890,17 @@ packages:
       tslib: 2.5.0
     dev: false
 
-  /@tldraw/editor/2.0.0-alpha.7_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-tJm/H+hkRq+cXXpN0U9tjSrxjXp2e9GB0vNnFVw76DeIuXiT0i0HnWOsIUiem9hkGlRhJsYLjM4BWM9nROYvrg==}
+  /@tldraw/editor/2.0.0-alpha.8_cecwaxocxxjc4472cb2az7slqu:
+    resolution: {integrity: sha512-XjaeQmJWr9pw5wJ2GaStnCJ8bhfxWnq52hdMoAuW0CdbSywCVvdunM/iem9dzCUExQc28r7nBVEnXKw2rBCfUQ==}
     peerDependencies:
       react: ^18
       react-dom: ^18
+      signia: ^0
+      signia-react: ^0
     dependencies:
-      '@tldraw/primitives': 2.0.0-alpha.7
-      '@tldraw/tlschema': 2.0.0-alpha.7
-      '@tldraw/tlstore': 2.0.0-alpha.7
+      '@tldraw/primitives': 2.0.0-alpha.8_signia@0.1.0
+      '@tldraw/tlschema': 2.0.0-alpha.8_signia@0.1.0
+      '@tldraw/tlstore': 2.0.0-alpha.8_signia@0.1.0
       '@tldraw/tlvalidate': 2.0.0-alpha.7
       '@tldraw/utils': 2.0.0-alpha.7
       '@use-gesture/react': 10.2.24_react@18.2.0
@@ -914,39 +916,47 @@ packages:
       signia-react: 0.1.0_react@18.2.0
     dev: false
 
-  /@tldraw/primitives/2.0.0-alpha.7:
-    resolution: {integrity: sha512-4IItbyIGAhKXg3d6wTQKhiEZpnCdDbHT/Yj068EM7WWV4HOMlEzfne4Uct/qa2mkn5xjbHKcTeNqxmdVZooSdQ==}
+  /@tldraw/primitives/2.0.0-alpha.8_signia@0.1.0:
+    resolution: {integrity: sha512-EOaORQTEKZDNzKab6oZfst71bCSpylbHxWahwhIQ4mElnEIE97WrP3t25x3JjsamO3489r8beuEMLnPj2lLCvQ==}
     dependencies:
-      '@tldraw/tlschema': 2.0.0-alpha.7
+      '@tldraw/tlschema': 2.0.0-alpha.8_signia@0.1.0
+    transitivePeerDependencies:
+      - signia
     dev: false
 
-  /@tldraw/tldraw/2.0.0-alpha.7_fleixqh4h74dmdivs7fx6vtiqe:
-    resolution: {integrity: sha512-S1ssl/ReH6pIAA3puL2/NYJsTxpePofs72wuidIWFyclN9ra0cG1x39xu2b5qnKd+dCpsXJw1ZODSmMjxjNFCQ==}
+  /@tldraw/tldraw/2.0.0-alpha.8_e67msiuz5ue542jrk4dmqcpxyi:
+    resolution: {integrity: sha512-fAO2NUi8NSnaswYF/sicAPeCG23gJZsiVphIlP/cFTSq4sNdhgaX11zVmWj0QonCbdy/SZIaUHMWjKxn4jGzEQ==}
     peerDependencies:
       react: ^18
       react-dom: ^18
     dependencies:
-      '@tldraw/editor': 2.0.0-alpha.7_biqbaboplfbrettd7655fr4n2y
-      '@tldraw/tlsync-client': 2.0.0-alpha.7_react-dom@18.2.0
-      '@tldraw/ui': 2.0.0-alpha.7_fleixqh4h74dmdivs7fx6vtiqe
+      '@tldraw/editor': 2.0.0-alpha.8_cecwaxocxxjc4472cb2az7slqu
+      '@tldraw/tlsync-client': 2.0.0-alpha.8_jt6t3t6av7izyat6h7n36k7jru
+      '@tldraw/ui': 2.0.0-alpha.8_e67msiuz5ue542jrk4dmqcpxyi
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     transitivePeerDependencies:
       - '@types/react'
+      - signia
+      - signia-react
       - typescript
     dev: false
 
-  /@tldraw/tlschema/2.0.0-alpha.7:
-    resolution: {integrity: sha512-JLdn+ocUaRThV1i0gGDdddwcFFRuIVihkJzBVpta2F0ydLm/4cXqA+mpDAaS2aotIjBuL1YGdhtxclNuCVGuEw==}
+  /@tldraw/tlschema/2.0.0-alpha.8_signia@0.1.0:
+    resolution: {integrity: sha512-+XFqvoNncs4DXCkBr9JE/TPKcls/stApfB5kMhnyk/suTF+Z08B0AJVAMOavA0KHjtwhjwczknkZqB4nmmO8Qg==}
     dependencies:
-      '@tldraw/tlstore': 2.0.0-alpha.7
+      '@tldraw/tlstore': 2.0.0-alpha.8_signia@0.1.0
       '@tldraw/tlvalidate': 2.0.0-alpha.7
       '@tldraw/utils': 2.0.0-alpha.7
       nanoid: 3.3.4
+    transitivePeerDependencies:
+      - signia
     dev: false
 
-  /@tldraw/tlstore/2.0.0-alpha.7:
-    resolution: {integrity: sha512-Q0P6VaeF6i86XFF+1UeOToTdH7wSG2uPG4dXKEdPxUWpJBMJ/+ODPS7bEaw6SQree9SL4PnjHVrVRCCmvc9nYQ==}
+  /@tldraw/tlstore/2.0.0-alpha.8_signia@0.1.0:
+    resolution: {integrity: sha512-56E2CKE5c+t7JtC5AfDfMTQRpee336BuZcJOZMj78nWDp5qSKFqMoby0ckPuYOPvjVi5/0iN/XPEmDfF5Vzcwg==}
+    peerDependencies:
+      signia: ^0
     dependencies:
       '@tldraw/utils': 2.0.0-alpha.7
       lodash.isequal: 4.5.0
@@ -954,12 +964,15 @@ packages:
       signia: 0.1.0
     dev: false
 
-  /@tldraw/tlsync-client/2.0.0-alpha.7_react-dom@18.2.0:
-    resolution: {integrity: sha512-TW5WUXb0wL6WeOZLMDzuRXfdvwQ80okVyK/1ZWG7cRzZbh9vH5LNLM2NjeyaQ8/0uLd0HP/38a3fm0PQgzUyiQ==}
+  /@tldraw/tlsync-client/2.0.0-alpha.8_jt6t3t6av7izyat6h7n36k7jru:
+    resolution: {integrity: sha512-tzkM3zO0SGKorKaMZH/soy2VwFfylXL3oBTQJj83JjkriVrNMKOMBaAeTw3dsvoM4Y7WJGPp4o8fuK20RJwv5A==}
+    peerDependencies:
+      signia: ^0
+      signia-react: ^0
     dependencies:
-      '@tldraw/editor': 2.0.0-alpha.7_biqbaboplfbrettd7655fr4n2y
-      '@tldraw/tlstore': 2.0.0-alpha.7
-      '@tldraw/tlsync': 2.0.0-alpha.7
+      '@tldraw/editor': 2.0.0-alpha.8_cecwaxocxxjc4472cb2az7slqu
+      '@tldraw/tlstore': 2.0.0-alpha.8_signia@0.1.0
+      '@tldraw/tlsync': 2.0.0-alpha.8_signia@0.1.0
       idb: 7.1.1
       signia: 0.1.0
       signia-react: 0.1.0_react@18.2.0
@@ -969,11 +982,14 @@ packages:
       - react-dom
     dev: false
 
-  /@tldraw/tlsync/2.0.0-alpha.7:
-    resolution: {integrity: sha512-bC99jk0NqwdF+Z6WnN3OLsJv69PpdegHt31pzLEJwwHDyrg7XxYcCjzuqijVk33+1E47BTL3pygicwW29oBOSQ==}
+  /@tldraw/tlsync/2.0.0-alpha.8_signia@0.1.0:
+    resolution: {integrity: sha512-ddp/Sc2AV/WeJQRBjrGGZc/nEaGSXx8FFgr+ebr5kGx6sR5dxOkeQ67G28WemFW93ToXWNUldLKYyqwcWBl7vw==}
+    peerDependencies:
+      signia: ^0
     dependencies:
-      '@tldraw/tlschema': 2.0.0-alpha.7
-      '@tldraw/tlstore': 2.0.0-alpha.7
+      '@react-spring/rafz': 9.7.1
+      '@tldraw/tlschema': 2.0.0-alpha.8_signia@0.1.0
+      '@tldraw/tlstore': 2.0.0-alpha.8_signia@0.1.0
       '@tldraw/utils': 2.0.0-alpha.7
       lodash.isequal: 4.5.0
       signia: 0.1.0
@@ -985,11 +1001,13 @@ packages:
       '@tldraw/utils': 2.0.0-alpha.7
     dev: false
 
-  /@tldraw/ui/2.0.0-alpha.7_fleixqh4h74dmdivs7fx6vtiqe:
-    resolution: {integrity: sha512-tz5LZst2nS1ok8wXVpp2gq5AEKLGqbAsn6NOPTKqD4YPvy7ECuRHYI7klYMztdwniZw2su4n38n1+yvYJV2tcA==}
+  /@tldraw/ui/2.0.0-alpha.8_e67msiuz5ue542jrk4dmqcpxyi:
+    resolution: {integrity: sha512-RTh5TQa9O9f5Zp8xXty4u88KepV/4XE76BwYPLJrC+6jQPywcnJXsWG7gqTS9onYzHR0j2BfF6Tb79KoEpyWtA==}
     peerDependencies:
       react: ^18
       react-dom: ^18
+      signia: ^0
+      signia-react: ^0
     dependencies:
       '@radix-ui/react-alert-dialog': 1.0.3_zula6vjvt3wdocc4mwcxqa6nzi
       '@radix-ui/react-context-menu': 2.1.3_zula6vjvt3wdocc4mwcxqa6nzi
@@ -999,9 +1017,9 @@ packages:
       '@radix-ui/react-select': 1.2.1_zula6vjvt3wdocc4mwcxqa6nzi
       '@radix-ui/react-slider': 1.1.1_biqbaboplfbrettd7655fr4n2y
       '@radix-ui/react-toast': 1.1.3_biqbaboplfbrettd7655fr4n2y
-      '@tldraw/editor': 2.0.0-alpha.7_biqbaboplfbrettd7655fr4n2y
-      '@tldraw/primitives': 2.0.0-alpha.7
-      '@tldraw/tlsync-client': 2.0.0-alpha.7_react-dom@18.2.0
+      '@tldraw/editor': 2.0.0-alpha.8_cecwaxocxxjc4472cb2az7slqu
+      '@tldraw/primitives': 2.0.0-alpha.8_signia@0.1.0
+      '@tldraw/tlsync-client': 2.0.0-alpha.8_jt6t3t6av7izyat6h7n36k7jru
       '@tldraw/utils': 2.0.0-alpha.7
       browser-fs-access: 0.31.2
       classnames: 2.3.2
