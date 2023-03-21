@@ -21,7 +21,6 @@
     "react-dom": "18.2.0",
     "signia": "0.1.0",
     "signia-react": "0.1.0",
-    "signia-react-jsx": "0.1.0",
     "tailwind-merge": "^1.10.0",
     "typescript": "4.9.5"
   },
