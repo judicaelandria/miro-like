@@ -40,16 +40,9 @@ export class CFrameUtil extends TLBoxUtil<CFrameShape> {
     };
   }
 
-  override canReceiveNewChildrenOfType = (_type: TLShapeType) => {
-    return true;
-  };
+  override canReceiveNewChildrenOfType = () => true;
 
-  override canDropShapes = (
-    _shape: CFrameShape,
-    _shapes: TLShape[]
-  ): boolean => {
-    return true;
-  };
+  override canDropShapes = () => true;
 
   // need to add the method that let us drop a shape
 
