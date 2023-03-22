@@ -6,7 +6,7 @@ import { ShapeMenuButton } from "~/components/ShapeMenuButton";
 
 export const ZoomMenu = track(() => {
   const app = useApp();
-  const zoomLevel = app.zoomLevel;
+  const zoom = app.camera.z;
 
   const handleZoomIn = useCallback(() => app.zoomIn(app.screenCenter), [app]);
   const handleZoomOut = useCallback(() => app.zoomOut(app.screenCenter), [app]);
@@ -17,7 +17,7 @@ export const ZoomMenu = track(() => {
         <MinusIcon className="w-6 text-slate-900" />
       </ShapeMenuButton>
       <span className="text-sm text-slate-900 font-medium">
-        {Math.round(zoomLevel) * 100}%
+        {Math.round(zoom * 100)}%
       </span>
       <ShapeMenuButton className="h-full" onClick={handleZoomIn}>
         <PlusIcon className="w-6 text-slate-900" />
