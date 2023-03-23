@@ -2,6 +2,7 @@ import {
   Canvas,
   getUserData,
   TldrawEditor,
+  TldrawUi,
   TLInstance,
   useLocalSyncClient,
 } from "@tldraw/tldraw";
@@ -29,8 +30,10 @@ export const Editor = () => {
         store={syncedStore}
         userId={userData.id}
       >
-        <Canvas />
-        <TopPanel />
+        <TldrawUi>
+          <Canvas />
+          <TopPanel />
+        </TldrawUi>
         <PrimaryTool />
         <ZoomMenu />
       </TldrawEditor>
