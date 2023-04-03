@@ -61,15 +61,15 @@ export const PrimaryTool = track(() => {
   const tools: { title: Tool; icon: ReactElement }[] = [
     {
       title: "select",
-      icon: <CursorArrowRaysIcon className="w-6 text-black" />,
+      icon: <CursorArrowRaysIcon className="w-6" />,
     },
     {
       title: "draw",
-      icon: <PencilIcon className="w-6 text-black" />,
+      icon: <PencilIcon className="w-6" />,
     },
     {
       title: "eraser",
-      icon: <StopIcon className="w-6 text-black" />,
+      icon: <StopIcon className="w-6" />,
     },
     {
       title: "line",
@@ -77,46 +77,47 @@ export const PrimaryTool = track(() => {
     },
     {
       title: "note",
-      icon: <DocumentTextIcon className="w-6 text-black" />,
+      icon: <DocumentTextIcon className="w-6" />,
     },
     {
       title: "text",
-      icon: <span className="text-xl text-black">T</span>,
+      icon: <span className="text-xl">T</span>,
     },
     {
       title: "cframe",
-      icon: <WindowIcon className="w-6 text-black" />,
+      icon: <WindowIcon className="w-6" />,
     },
   ];
 
   return (
     <div className="fixed left-2 top-[30%] h-max space-y-6 z-[999]">
-      <div className="h-max p-1 bg-white shadow-lg flex flex-col">
+      <div className="h-max p-1 bg-white dark:bg-dark-bg shadow-lg flex flex-col">
         {tools.map((tool, id) => (
           <ShapeMenuButton
             key={id}
             isActive={getActiveToolId(app) === tool.title}
             onClick={() => handleSelectTool(tool.title)}
             title={tool.title}
+            className="[&>*]:dark:text-white [&>*]:text-black"
           >
             {tool.icon}
           </ShapeMenuButton>
         ))}
       </div>
-      <div className="h-max p-1 bg-white shadow-lg flex flex-col">
+      <div className="h-max p-1 bg-white dark:bg-dark-bg shadow-lg flex flex-col">
         <ShapeMenuButton title="Undo" onClick={handleUndo} disabled={!canUndo}>
           <ArrowUturnLeftIcon
             className={twMerge(
-              "w-6 text-slate-900",
-              !canUndo && "text-slate-300"
+              "w-6 text-slate-900 dark:text-white",
+              !canUndo && "text-slate-300 dark:text-slate-500"
             )}
           />
         </ShapeMenuButton>
         <ShapeMenuButton title="Redo" onClick={handleRedo} disabled={!canRedo}>
           <ArrowUturnRightIcon
             className={twMerge(
-              "w-6 text-slate-900",
-              !canRedo && "text-slate-300"
+              "w-6 text-slate-900 dark:text-white",
+              !canRedo && "text-slate-300 dark:text-slate-500"
             )}
           />
         </ShapeMenuButton>
